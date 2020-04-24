@@ -1,4 +1,5 @@
 const path = require('path');
+const outputPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
   entry: './src/index.ts',
@@ -19,4 +20,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   mode: "development",
+  devServer: {
+    contentBase: outputPath
+  },
 };
