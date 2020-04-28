@@ -5,10 +5,11 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write 'src/**/*.ts'",
     "build": "webpack",
-    "start:dev": "webpack-dev-server --open"
+    "start:dev": "webpack-dev-server --open",
+    "test": "./node_modules/.bin/jest",
+    "test:watch": "./node_modules/.bin/jest --watch"
   },
   "repository": {
     "type": "git",
