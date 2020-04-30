@@ -2,7 +2,6 @@ export class TodoItem {
     private todo:string = "";
 
     constructor() {
-
         const todoTextElement:HTMLInputElement | null = 
             document.getElementById("todo") as HTMLInputElement;
         if (!todoTextElement) {

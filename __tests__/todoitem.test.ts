@@ -1,6 +1,22 @@
 import {TodoItem} from "../src/todoitem";
 
-test("basic", () => {
+beforeEach(() => {
+    console.log("テスト関数の実行前に呼ばれる");
+})
+
+afterEach(() => {
+    console.log("テスト関数の実行後に呼ばれる");
+});
+
+beforeAll(() => {
+    console.log("最初に１回呼ばれるだけ");
+});
+
+afterAll(() => {
+    console.log("全てのテスト完了後に呼ばれる");
+});
+
+test("constructor error", () => {
 
     try {
         const item:TodoItem = new TodoItem();
@@ -10,13 +26,13 @@ test("basic", () => {
 
 });
 
-test("basic2", () => {
+test("constructor successful", () => {
     document.body.innerHTML = '<div><input type="text" value="test" id="todo"></div>';
     const item:TodoItem = new TodoItem();
     expect((item as any).todo).toBe("test");
 });
 
-test("basic3", () => {
+test("getTodo test", () => {
     document.body.innerHTML = '<div><input type="text" value="test2" id="todo"></div>';
     const item:TodoItem = new TodoItem();
     const text:Text = item.getTodo();

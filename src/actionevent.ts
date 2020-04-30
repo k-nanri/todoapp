@@ -7,6 +7,6 @@ export function addTodo() {
         const todolist:TodoList = new TodoList();
         todolist.pushTodo(todo.getTodo());
     } catch (e) {
-
+        console.log(e);
     }
 }
