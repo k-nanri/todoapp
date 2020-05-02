@@ -3,7 +3,7 @@ export class TodoList {
     private todolist:HTMLElement;
 
     constructor() {
-        const element:HTMLElement | null = document.getElementById("todoitems");
+        const element:HTMLElement | null = document.getElementById("todolist");
         if (element === null) {
             throw Error("Not Found HTMLElement.");
         }
@@ -12,7 +12,7 @@ export class TodoList {
 
     public pushTodo(todo:Text) {
         
-        const list = document.createElement("li");
+        const list = document.createElement("div");
         list.appendChild(todo);
         this.todolist.appendChild(list);
     }
