@@ -1,6 +1,6 @@
 import {TodoItem} from "../src/todoitem";
 import {TodoList} from "../src/todolist";
-import { addTodo } from "../src/actionevent";
+import { addTodo, completed } from "../src/actionevent";
 
 jest.mock("../src/todoitem");
 jest.mock("../src/todolist");
@@ -28,6 +28,7 @@ test("test addTodo", () => {
             }
         }
     });
+
     expect(addTodo());
 });
 
@@ -36,10 +37,17 @@ test("test addTodo error", () => {
         throw new Error("constructor error.")
     });
 
+
     TodoListMock.mockImplementation(() => {
         pushTodo:(text:Text): void => {
             return;
         }
     });
+
     expect(addTodo());
+});
+
+test("test checkbox", () => {
+    const event: Event = document.createEvent("HTMLEvents");
+    expect(completed(event));
 });
