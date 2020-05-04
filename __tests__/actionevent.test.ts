@@ -28,6 +28,7 @@ test("test addTodo", () => {
             }
         }
     });
+
     expect(addTodo());
 });
 
@@ -36,10 +37,12 @@ test("test addTodo error", () => {
         throw new Error("constructor error.")
     });
 
+
     TodoListMock.mockImplementation(() => {
         pushTodo:(text:Text): void => {
             return;
         }
     });
+
     expect(addTodo());
 });

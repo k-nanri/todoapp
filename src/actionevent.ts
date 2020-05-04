@@ -5,7 +5,7 @@ import {CheckBoxItem} from "./checkboxitem";
 export function addTodo() {
     try {
         const todo:TodoItem = new TodoItem();
-        const todolist:TodoList = TodoList.getInstance();
+        const todolist:TodoList = new TodoList();
         todolist.pushTodo(todo.getTodo());
     } catch (e) {
         // console.log(e);
@@ -18,7 +18,7 @@ export function completed(event:Event) {
         const checkBoxItem:CheckBoxItem = new CheckBoxItem(event);
         checkBoxItem.complete();
     } catch(e) {
-        
+
     }
 
 }
