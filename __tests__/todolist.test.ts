@@ -27,6 +27,7 @@ test("todolist 3", () => {
     expect(actual).not.toBeNull();
     if (actual) {
         const nodelist = actual.childNodes
+        expect((nodelist[0].childNodes[0] as HTMLInputElement).type).toBe("checkbox");
         expect(nodelist[0].childNodes[1].nodeValue).toBe("test2");
     } else {
         throw new Error("actual is null.");
