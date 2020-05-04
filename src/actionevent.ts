@@ -1,6 +1,7 @@
 import {TodoItem} from "./todoitem";
 import {TodoList} from "./todolist";
 import {CheckBoxItem} from "./checkboxitem";
+import {DeleteTodo} from "./deletetodo";
 
 export function addTodo() {
     try {
@@ -21,4 +22,13 @@ export function completed(event:Event) {
 
     }
 
+}
+
+export function deleteTodo(event:Event):void {
+    try {
+        const deleteTodo:DeleteTodo = new DeleteTodo(event);
+        deleteTodo.delete();
+    } catch (e) {
+
+    }
 }
