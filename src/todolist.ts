@@ -23,6 +23,7 @@ export class TodoList {
         // delete button
         const deletebutton = document.createElement("input");
         deletebutton.type = "button";
+        deletebutton.className = "btn btn-danger";
         deletebutton.value = "削除";
         deletebutton.addEventListener("click", deleteTodo);
 
