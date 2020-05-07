@@ -1,3 +1,4 @@
+
 h3 {
     text-align: center;
     background-color: black;
@@ -6,4 +7,22 @@ h3 {
 
 body {
     background-color: rgb(232, 240, 233);
+}
+
+.todo {
+    background-color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px 10px;
+}
+
+.todocheckbox {
+    margin-left: 5px;
+}
+
+.todolabel {
+    padding-left: 5px;
+    padding-right: 5px;
 }
