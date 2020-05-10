@@ -1,5 +1,7 @@
 import {TodoItem} from "./todoitem";
 import {TodoList} from "./todolist";
+import {CheckBoxItem} from "./checkboxitem";
+import {DeleteTodo} from "./deletetodo";
 
 export function addTodo() {
     try {
@@ -7,6 +9,26 @@ export function addTodo() {
         const todolist:TodoList = new TodoList();
         todolist.pushTodo(todo.getTodo());
     } catch (e) {
-        console.log(e);
+        // console.log(e);
+    }
+}
+
+export function completed(event:Event) {
+
+    try {
+        const checkBoxItem:CheckBoxItem = new CheckBoxItem(event);
+        checkBoxItem.complete();
+    } catch(e) {
+
+    }
+
+}
+
+export function deleteTodo(event:Event):void {
+    try {
+        const deleteTodo:DeleteTodo = new DeleteTodo(event);
+        deleteTodo.delete();
+    } catch (e) {
+
     }
 }
