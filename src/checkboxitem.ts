@@ -12,12 +12,12 @@ export class CheckBoxItem {
     public complete():void {
 
         const element:HTMLInputElement = this.event as HTMLInputElement;
-        console.log(element.checked);
-        if (element.parentElement) {
+        if (element.parentElement?.childNodes[1]) {
+            const label:HTMLElement = element.parentElement?.childNodes[1] as HTMLElement;
             if (element.checked) {
-                element.parentElement.style.textDecoration = "line-through";
+                label.style.textDecoration = "line-through";
             } else {
-                element.parentElement.style.textDecoration = "";
+                label.style.textDecoration = "";
             }
         }
     }
