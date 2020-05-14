@@ -8,6 +8,12 @@ export class TodoItem {
             throw Error("Not Found HTMLElement");
         }
 
+        const replace_str = todoTextElement.value.replace(/\s+/, "");
+        if (replace_str.length === 0) {
+            throw Error("invalid string");
+        }
+        console.log(replace_str.length);
+
         this.todo = todoTextElement.value;
     }
 
